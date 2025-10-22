@@ -48,7 +48,21 @@ print(lion.describe())
 
  Définissez **`Cat`** comme une sous-classe de **`Animal`**. Elle représentera plus spécifiquement les chats.
  */
-
+class Cat: Animal {
+    
+    let color: String
+    
+    init(name: String, color: String) {
+        self.color = color
+        super.init(name: name, species: "Mammifère")
+    }
+    
+    override func describe() -> String {
+        let description: String = "Je suis un \(name), du genre des \(species)s et de couleur \(color)."
+        return description
+    }
+    
+}
 /*:
  ### **Ajoutez une Nouvelle Propriété :**
 
@@ -70,20 +84,11 @@ print(lion.describe())
 
  Surchargez la méthode **`describe()`** pour qu'elle retourne une chaîne de caractères décrivant le chat, incluant son nom, son espèce (toujours "Mammifère") et sa couleur. Le format attendu est : "Je suis un (name), du genre des (species) et de couleur (couleur)."
  */
-
-/*:
- ### **Instanciez et Testez la Sous-Classe `Cat` :**
-
- Créez une instance de **`Cat`** en lui donnant un **`name`** et une **`couleur`**. Par exemple, vous pouvez créer un chat nommé "Chat" de couleur "Blanc et noir".
-
- Utilisez la méthode **`print()`** pour afficher le résultat de la méthode **`describe()`** appliquée à votre instance de **`Cat`**. Assurez-vous que l'affichage en console inclut toutes les informations : nom, espèce, et couleur.
- */
-
-
+let cat = Cat(name: "Chat", color: "noir")
 /*:
  ### **Conseils :**
 
  N'oubliez pas d'utiliser **`override`** pour surcharger la méthode **`describe()`** dans la sous-classe **`Cat`**.
  */
-
+print(cat.describe())
 //: [Next](@next)
