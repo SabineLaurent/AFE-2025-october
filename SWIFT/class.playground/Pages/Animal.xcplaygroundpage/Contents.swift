@@ -16,11 +16,12 @@ class Animal {
     
     init(name: String, species: String) {
         self.name = name
-        self.species = name
+        self.species = species
     }
     
-    func describe() {
-        let description: String = "Je suis un \(name), du genre des \(species)."
+    func describe() -> String {
+        let description: String = "Je suis un \(name), du genre des \(species)s."
+        return description
     }
     
 }
@@ -35,13 +36,13 @@ class Animal {
 
  À l'extérieur de votre classe, créez une instance de **`Animal`**. Par exemple, utilisez le nom "Lion" et l'espèce "Mammifère" pour cette instance.
  */
-
+let lion = Animal(name: "Lion", species: "Mammifère")
 /*:
  ### **Testez votre Code :**
 
  Utilisez la méthode **`print()`** pour afficher le résultat de la méthode **`describe()`** appliquée à votre instance de **`Animal`**. Le résultat attendu dans la console doit correspondre à la description de l'animal que vous avez créé.
  */
-
+print(lion.describe())
 /*:
  ### **Créez la Sous-Classe `Cat`:**
 
