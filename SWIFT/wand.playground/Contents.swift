@@ -27,7 +27,15 @@ var students = [
     Student(name: "Tom", wand: "If"),
     Student(name: "Albus", wand: "Sureau"),
     Student(name: "Neville", wand: "Cerisier"),
-    Student(name: "Toto", wand: nil)
+    Student(name: "Toto", wand: nil),
     Student(name: "Nono", wand: nil)
     
 ]
+
+func displayWandOf(student: Student) {
+    if let wand = student.wand{
+        print("\(student.name) a une baguette de type: Bois de \(wand.lowercased())")
+    } else {
+        print("\(student.name) n'a pas encore de baguette magique")
+    }
+}
