@@ -39,3 +39,9 @@ func displayWandOf(student: Student) {
         print("\(student.name) n'a pas encore de baguette magique")
     }
 }
+
+for student in students {
+    
+    displayWandOf(student: student)
+    
+}
