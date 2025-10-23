@@ -1,4 +1,4 @@
- //
+//
 //  PetCardView.swift
 //  myPet
 //
@@ -8,35 +8,47 @@
 import SwiftUI
 
 struct PetCardView: View {
+    
+    let pet: Pet
+    
     var body: some View {
-
+        
         VStack {
             
             ZStack(alignment: .bottom) {
                 
                 RoundedRectangle(cornerRadius: 32)
                     .fill(Color.yellow)
-                    .frame(width: 175, height: 165)
+                    .frame(width: 150, height: 140)
                 
-                Image(.cerf)
+                Image(pet.image)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 145)
+                    .frame(height: 170)
                     .padding(.bottom, 8)
                 
             }
-           
+            
             HStack {
                 
-                Text("Cerf")
+                Text(pet.name)
                     .fontWeight(.medium)
- 
-                Image(systemName: "star")
-                    .foregroundStyle(Color.yellow)
+                
+                Button {
+                    
+                    
+                    
+                } label: {
+                    Image(systemName: "star")
+                        .foregroundStyle(Color.yellow)
+                    
+                }
+                
+                
                 
             }
             .font(.title2)
-        
+            
         }
         
         
@@ -44,5 +56,5 @@ struct PetCardView: View {
 }
 
 #Preview {
-    PetCardView()
+    PetCardView(pet: petPreview)
 }
