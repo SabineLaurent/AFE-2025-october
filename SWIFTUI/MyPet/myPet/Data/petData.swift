@@ -14,10 +14,12 @@ class Pet: Identifiable {
     let id = UUID()
     let name: String
     let image: String
+    var isFavorite : Bool
     
-    init(name: String, image: String) {
+    init(name: String, image: String, isFavorite : Bool = false) {
         self.name = name
         self.image = image
+        self.isFavorite = isFavorite
     }
     
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PetCardView: View {
     
-    let pet: Pet
+    var pet: Pet
     
     var body: some View {
         
@@ -36,14 +36,12 @@ struct PetCardView: View {
                 
                 Button {
                     
-                    
-                    
+                    changeFavoriteStatus(pet: pet)
+                  
                 } label: {
-                    Image(systemName: "star")
+                    Image(systemName: displayFavoriteIcon(booleanVar: pet.isFavorite))
                         .foregroundStyle(Color.yellow)
-                    
                 }
-                
                 
                 
             }
